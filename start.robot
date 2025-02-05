@@ -1,6 +1,7 @@
 *** Settings ***
 Library  SeleniumLibrary
 
+
 *** Variables ***
 ${login}        Admin
 ${password}     admin123
@@ -9,7 +10,7 @@ ${password}     admin123
 
 
 *** Keywords ***
-Acessar a aplicacao
+Acessar a aplicacao Orange
     Open Browser    https://opensource-demo.orangehrmlive.com/web/index.php/auth/login      chrome    options=add_argument("--start-maximized")    
     Wait Until Element Is Enabled        xpath://input[@name="username"]     20
     Input Text    xpath://input[@name="username"]         ${login} 
@@ -23,7 +24,7 @@ Acessar a aplicacao
 *** Test Cases ***
 Logar com User e password corretos
     [Tags]  logar
-    Acessar a aplicacao
+    Acessar a aplicacao Orange
     Click Link                   //a[@href="/web/index.php/admin/viewAdminModule"]
     Sleep        3
     Element Should Be Visible    //h6[text()="User Management"]
